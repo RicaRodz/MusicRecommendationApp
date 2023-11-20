@@ -42,7 +42,7 @@ music_df = get_trending_playlist_data(playlist_id, access_token)
 # Verify if the DataFrame is not empty before saving to Excel
 if not music_df.empty:
     # Save to Excel
-    file_path_excel = '/Users/ricardordoriguez/Desktop/Github/MusicRecomApp/MusicRecommendationApp/hybrid_recommendations.xlsx'
+    file_path_excel = '/Users/ricardordoriguez/Desktop/hybrid_recommendations.xlsx'
     music_df.to_excel(file_path_excel, index=False)
     print("DataFrame saved to Excel successfully.")
 else:
