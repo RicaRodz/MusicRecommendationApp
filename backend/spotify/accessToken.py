@@ -4,8 +4,8 @@ import pandas as pd
 from musicData import get_trending_playlist_data
 
 # Replace with your own Client ID and Client Secret
-CLIENT_ID = 'd0a05b1bc0d44c23ae0cd6dff22dc515'
-CLIENT_SECRET = '8692cb67a5254679a8e9a30e7b89ac0f'
+CLIENT_ID = ''
+CLIENT_SECRET = ''
 
 # Base64 encode the client ID and client secret
 client_credentials = f"{CLIENT_ID}:{CLIENT_SECRET}"
