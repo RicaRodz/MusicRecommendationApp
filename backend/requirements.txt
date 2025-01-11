@@ -23,6 +23,7 @@ pandas==2.2.3
 pydantic==2.10.5
 pydantic_core==2.27.2
 Pygments==2.19.1
+pymongo==4.10.1
 python-dateutil==2.9.0.post0
 python-dotenv==1.0.1
 python-multipart==0.0.20
