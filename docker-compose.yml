@@ -1,41 +1,22 @@
-version: '3.8'
-
 services:
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "8000:8000"
+    depends_on:
+      - mongodb
+
   frontend:
     build:
-      context: ./frontend/music-app
-      dockerfile: Dockerfile
+      context: ./frontend
     ports:
       - "3000:3000"
     depends_on:
       - backend
-    environment:
-      - NODE_ENV=production
 
-  backend:
-    build:
-      context: ./backend/backend
-      dockerfile: Dockerfile
-    ports:
-      - "8000:8000"
-    volumes:
-      - ./backend:/app
-    depends_on:
-      - mongo
-    environment:
-      - DJANGO_SETTINGS_MODULE=backend.settings
-
-  mongo:
-    image: mongo:6.0
+  mongodb:
+    image: mongo:5.0
     container_name: mongodb
-    restart: always
     ports:
       - "27017:27017"
-    volumes:
-      - ./db/data:/data/db
-    environment:
-      - MONGO_INITDB_DATABASE=musicdb
-
-volumes:
-  mongo-data:
-    driver: local

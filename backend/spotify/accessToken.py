@@ -2,10 +2,15 @@ import requests
 import base64
 import pandas as pd
 from musicData import get_trending_playlist_data
+from dotenv import load_dotenv
+import os
+
+load_dotenv()  # take environment variables from .env
+
 
 # Replace with your own Client ID and Client Secret
-CLIENT_ID = ''
-CLIENT_SECRET = ''
+CLIENT_ID = os.getenv('SPOTIFY_CLIENT_ID')
+CLIENT_SECRET = os.getenv('SPOTIFY_CLIENT_SECRET')
 
 # Base64 encode the client ID and client secret
 client_credentials = f"{CLIENT_ID}:{CLIENT_SECRET}"
