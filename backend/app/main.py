@@ -6,7 +6,7 @@ app = FastAPI()
 
 # MongoDB setup
 client = MongoClient("mongodb://mongodb:27017")
-db = client["mydatabase"]
+db = client["music_db"]
 
 # Add CORS middleware
 app.add_middleware(
